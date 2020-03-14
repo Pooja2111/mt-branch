@@ -1,0 +1,148 @@
+<body>
+  <style>
+    body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg {
+
+background-image: url("https://wallpapercave.com/wp/2FwK691.jpg");
+
+
+
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+  
+  .input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: rgb(230, 224, 224);
+  color: rgb(73, 117, 160);
+  min-width: 40px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 5px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid rgb(2, 10, 17);
+}
+
+.btn:hover {
+  opacity: 1;
+}
+  </style>
+
+<div class="bg">
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-lg-1"></div>
+  <div class="col-lg-6">
+     
+          <img src="https://www.gpbirlaedufoundation.com/images/Login.jpg" width="80%" height="460px">
+     
+      </div>
+      
+<div [hidden]="submitted" style="width: 400px;">
+
+  <form [formGroup]="usersaveform" #saveUser1 (ngSubmit)="saveUser(saveUser1)" class="form-container">
+ 
+ <br>
+ <div class="jumbotron">
+ 
+ <div class="form-group">
+ 
+  <label for="name">Username:</label>
+  <div class="input-container">
+    <i class="fa fa-user icon fa-1x"></i>
+ 
+  <input type="text" class="form-control" class="input-field" formControlName="userName" data-toggle="tooltip"
+ 
+    data-placement="right" title="Enter User Name" >
+  </div>
+  <div class="alert alert-danger" *ngIf = "(usersaveform.get('userName').touched) && (usersaveform.get('userName').invalid)"
+ 
+   style="margin-top: 5px;">
+ 
+    <span *ngIf="usersaveform.get('userName').errors.required">username is required</span>
+ 
+     <span *ngIf = "usersaveform.get('userName').errors.minlength">
+ 
+       MinLength Error
+ 
+     </span>
+ 
+   </div>
+ 
+ </div>
+ 
+
+ 
+ <div class="form-group">
+ 
+ <label for="name">Password:</label>
+ <div class="input-container">
+  <i class="fa fa-lock icon"></i>
+ 
+ <input type="password" class="form-control" class="input-field"formControlName="password" data-toggle="tooltip"
+ 
+   data-placement="right" title="Enter Password" >
+ </div>
+ <div class="alert alert-danger" *ngIf = "(usersaveform.get('password').touched) && (usersaveform.get('password').invalid)"
+ 
+  style="margin-top: 5px;">
+ 
+   <span *ngIf="usersaveform.get('password').errors.required">password is required</span>
+ 
+    <span *ngIf = "usersaveform.get('password').errors.minlength">
+ 
+      MinLength Error
+ 
+    </span>
+ 
+  </div>
+ 
+ </div>
+ <div class="text-center">
+ <button type="submit" class="btn btn-success"[disabled]=!usersaveform.valid>Submit</button>
+</div>
+ <br>
+ <div class="col-lg-9">
+   <span class="float-right font-weight-bold">
+     New User?
+    
+     <a routerLink="/signup"> 
+     Signup   </a>
+
+   </span>
+ </div>
+</div>
+ </form>
+ </div>
+</div>
+
+ </div>
+ 
+
+</div>
+</body>

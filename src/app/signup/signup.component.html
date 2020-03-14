@@ -1,0 +1,254 @@
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<style>
+  body {
+
+    background-image: url("https://image.freepik.com/free-photo/woman-hands-using-laptop-computer-workspace-working-home_1428-190.jpg");
+
+
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: grey;
+    color: black;
+    text-align: center;
+  }
+
+
+  .input-container {
+    display: -ms-flexbox;
+    /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .icon {
+    padding: 10px;
+    background: rgb(182, 184, 185);
+    color: rgba(7, 7, 14, 0.966);
+    min-width: 40px;
+    text-align: center;
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 7px;
+    outline: none;
+  }
+
+  .input-field:focus {
+    border: 2px solid rgb(2, 10, 19);
+  }
+
+  .btn:hover {
+    opacity: 1;
+  }
+</style>
+
+<body>
+
+
+  <div class="container-fluid">
+
+
+    <div class="row">
+
+      <div class="col-lg-4"></div>
+      <div class="col-sm-9 col-md-7 col-lg-4">
+<br><br>
+
+
+        <form [formGroup]="usersaveform" #saveUser1 (ngSubmit)="saveUser(saveUser1)"class="form-container border border-dark p-4">
+
+
+          <div class="form-group">
+
+            <label for="name">ID:</label>
+            <div class="input-container">
+              <i class="fa fa-id-card icon"></i>
+
+              <input type="text" class="form-control" class="input-field" autofocus formControlName="id"
+                data-toggle="tooltip" data-placement="right" title="Enter id " required="required">
+            </div>
+            <div class="alert alert-danger" *ngIf="(Id.touched) && (Id.invalid)" style="margin-top: 5px;">
+
+              <span *ngIf="Id.errors.required">id is Required</span>
+
+              <span *ngIf="Id.errors.minlength">
+
+                MinLength Error
+
+              </span>
+
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label for="name">Username:</label>
+            <div class="input-container">
+              <i class="fa fa-user icon"></i>
+
+
+
+              <input type="text" class="form-control" class="input-field" formControlName="userName" pattern="[a-zA-Z]+"
+                data-toggle="tooltip" data-placement="right" title="Enter User Name" required="required">
+            </div>
+            <div class="alert alert-danger" *ngIf="(UserName.touched) && (UserName.invalid)" style="margin-top: 5px;">
+
+              <span *ngIf="UserName.errors.required">User Name is Required</span>
+
+              <span *ngIf="UserName.errors.minlength">
+
+                MinLength Error
+
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+            <label for="name">Password</label>
+            <div class="input-container">
+              <i class="fa fa-lock icon"></i>
+
+
+              <input type="password" class="form-control" class="input-field" formControlName="password"
+                data-toggle="tooltip" data-placement="right" title="enterpassword" required="required">
+            </div>
+            <div class="alert alert-danger" *ngIf="(Password.touched) && (Password.invalid)" style="margin-top: 5px;">
+
+              <span *ngIf="Password.errors.required">password is Required</span>
+
+              <span *ngIf="Password.errors.minlength">
+
+                MinLength Error
+
+              </span>
+
+            </div>
+
+          </div>
+
+         
+          <div class="form-group">
+
+            <label for="name">Email</label>
+            <div class="input-container">
+              <i class="fa fa-envelope icon"></i>
+
+              <input type="text" class="form-control" class="input-field" formControlName="email" data-toggle="tooltip"
+                data-placement="right" title="Enter Email" required="required">
+            </div>
+            <div class="alert alert-danger" *ngIf="(Email.touched) && (Email.invalid)" style="margin-top: 5px;">
+
+              <span *ngIf="Email.errors.required">Email is Required</span>
+
+              <span *ngIf="Email.errors.email">
+
+                Invalid Email Format
+
+              </span>
+
+            </div>
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="name">MobileNumber</label>
+            <div class="input-container">
+              <i class="fa fa-phone icon"></i>
+
+
+              <input type="number" class="form-control" class="input-field" formControlName="mobileNumber"
+                data-toggle="tooltip" data-placement="right" title="Enter MobileNumber" required size="11"
+                required="required">
+            </div>
+            <div class="alert alert-danger" *ngIf="(MobileNumber.touched) && (MobileNumber.invalid)"
+              style="margin-top: 5px;">
+
+              <span *ngIf="MobileNumber.errors.required">number is Required</span>
+
+              <span *ngIf="MobileNumber.errors.email">
+
+                Invalid mobilenumber
+
+              </span>
+
+            </div>
+
+          </div>
+
+
+
+         
+          <div class="row">
+            <div class=" col-md-offset-1 col-md-10">
+
+              <label for="profileImage">Upload Image</label>
+              <div class="input-container">
+                <i class="fa fa-upload icon"></i>
+              <input formControlName="profileImage" class="form-control"type="file" (change)="selectFile($event)">
+            </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <br>
+            <button type="submit" class="btn btn-success" (click)=saveuserform [disabled]=!usersaveform.valid>Submit</button>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+
+    <div class="text-center" >Already have an account? <a href="login">Login here</a></div>
+    <br>
+    <br>
+
+    <div [hidden]="!submitted">
+
+      
+
+      <h4>User Added SuccessFully!</h4>
+
+    </div>
+  </div>
+  <div class="footer">
+    <button class="btn btn-basic"><a class="text-white" href="/login">back</a></button>
+  </div>
+
+  <br>
+</body>
+
+</html>

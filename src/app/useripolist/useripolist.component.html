@@ -1,0 +1,91 @@
+<style>
+    .bg {
+  
+      background-image: url("http://www.cmoney.tw/notes/cmstatic/notes/shutterstock/244.jpg");
+  
+      background-repeat: no-repeat;
+  
+      background-size: 100% 140%;
+  
+    }
+  </style>
+  
+  <body> 
+  
+  
+  
+    
+  
+    <div class="bg">
+  
+  
+    <br>
+    <br>
+    <div class="container">
+  
+  
+    <div class="panel panel-default">
+  
+      <div class="panel-body">
+    
+        <table class="table table-hover table-sm" >
+    
+          <thead class="thead-light">
+    
+            <tr>
+              <th>Id</th>
+              <th>CompanyName</th>
+             
+              <th>StockExchange</th>
+    
+              <th>PricePerShare</th>
+    
+              <th>TotalNoOfShares</th>
+    
+              <th>Remarks</th>
+              <th>OpenDateTime</th>
+                
+            </tr>
+    
+          </thead>
+    
+          <tbody>
+    
+             <tr *ngFor="let ipos of iposlist ">
+    
+              <td>{{ipos.id}}</td>
+              <td>{{ipos.companyName}}</td>
+    
+              <td>{{ipos.stockExchange}}</td>
+    
+              <td>{{ipos.pricePerShare}}</td>
+    
+              <td>{{ipos.totalNoOfShares}}</td>
+    
+              <td>{{ipos.remarks}}</td>
+    
+              <td>{{ipos.opendatetime}}</td>
+              <td><button (click)="deleteIpos(ipos)" class="btn btn-danger">Delete</button> </td> 
+              <td><button (click)="updateIpos(ipos)" class="btn btn-info">Update</button> </td> 
+             </tr>
+    
+          </tbody><br>
+    
+        </table>
+        <div class="text-center"> 
+          <button class="btn btn-basic " ><a href="ipo">Add</a></button> 
+          <button class="btn btn-basic " ><a href="ipo">Back</a></button> 
+          <br>
+          <br><br><br><br><br>
+          <br>
+          <br><br>
+          <br>
+          <br><br><br><br><br>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+   
+  </body>
